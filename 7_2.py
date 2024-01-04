@@ -36,7 +36,7 @@ def get_hand(line):
 
     list_num = sorted(list_num,reverse=True)
 
-    # Verificamos si hay Jokers y añadimos una a la mayor combinación que no sea Jokers
+    # Verificamos si hay Jokers y añadimos el número de jokers a la mayor combinación que no sea Jokers
     joker = False
     i = 0
     for hand in list_num:
@@ -79,7 +79,7 @@ def get_ranks(lines):
         else:
             dic_ranks[rank[0]] = [rank[1]]
 
-    # 
+    # Ordenamos por fuerza de combinación en cada agrupamiento de rango
     for hand_dic in dic_ranks:
         v = dic_ranks[hand_dic]
         long = len(v) - 1
@@ -99,6 +99,7 @@ def get_ranks(lines):
                         encontrada=True
                     j+=1
 
+    # Agrupamos cada combinación en orden con su puntuación para la lista final
     for hands in dic_ranks:
         list_hands = dic_ranks[hands]
         for hand in list_hands:

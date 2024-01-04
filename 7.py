@@ -36,14 +36,12 @@ def get_hand(line):
 
     list_num = sorted(list_num,reverse=True)
 
-    i=0
-    for strength in strength_hand:
+    for i,strength in enumerate(strength_hand):
         if list_num[0][0] != 5:
             if [list_num[0][0],list_num[1][0]] == strength:
                 return [i,line]
         else:
             return [i,line]
-        i+=1
 
 def get_ranks(lines):
     total_ranking = []
